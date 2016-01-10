@@ -19,7 +19,6 @@ find $ProjectName -type f | sort -d | xargs sha1sum | tee fingerprint.log | sha1
 rm $ProjectName/local.properties
 rm -r $ProjectName/src/androidTest
 
-  exit
 
 #updatesome files
 
@@ -57,6 +56,7 @@ cp UpdateFiles/gradle.properties $ProjectName/gradle.properties
 #                       1085fb75d8b9653bf4ac60f345cd01fac89c3c26
 
 
+  exit
 
 ####################################################################
 # try gradlew

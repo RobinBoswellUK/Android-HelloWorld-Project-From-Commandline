@@ -11,11 +11,4 @@ apply plugin: 'android'
 android {
     compileSdkVersion 'android-22'
     buildToolsVersion '22.0.1'
-
-    buildTypes {
-        release {
-            runProguard false
-            proguardFile getDefaultProguardFile('proguard-android.txt')
-        }
-    }
 }
