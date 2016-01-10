@@ -1,0 +1,15 @@
+db6884849a482e868cda7420f6c3270622763de4  HelloWorld/build.gradle
+446223e9865a320cb76bdf19073a68c3479a4029  HelloWorld/gradlew
+cf68b95a4029e352fe1ee002bb367ac1b686f9ad  HelloWorld/gradlew.bat
+e614e3b2edc63a9cc423437dea087c91962254f5  HelloWorld/gradle/wrapper/gradle-wrapper.jar
+5d0e99f0c1e9a3b7c9538194cf99294164f60bef  HelloWorld/gradle/wrapper/gradle-wrapper.properties
+becd950df1ff21f81317f422fd64f35784b8e301  HelloWorld/local.properties
+332125e1ff390ecddb4f74e2ae88a65e5e41f87b  HelloWorld/src/androidTest/java/com/example/HelloWorldActivityTest.java
+dac24c742707083acdb136f22428c225ec3fe7bf  HelloWorld/src/main/AndroidManifest.xml
+4a1ca7c9807fd118b5c5df22846727a546b2c284  HelloWorld/src/main/java/com/example/HelloWorldActivity.java
+4a5a9affbb731f195fc18fea78d51be7db7536a2  HelloWorld/src/main/res/drawable-hdpi/ic_launcher.png
+68b8ab0d3181d74d05641da4c5ed13465ea1a997  HelloWorld/src/main/res/drawable-ldpi/ic_launcher.png
+7761bceaf18ed25cdba5f34bf00a55616d078acf  HelloWorld/src/main/res/drawable-mdpi/ic_launcher.png
+82acdd75e3fcc36026109406625edc69d4d7212d  HelloWorld/src/main/res/drawable-xhdpi/ic_launcher.png
+2e030d0eb071ecb314cb13d506266caf9e5fbdd8  HelloWorld/src/main/res/layout/main.xml
+28ec74bca9ee6597a07aa8f0eecaa47ceb6c8e83  HelloWorld/src/main/res/values/strings.xml
