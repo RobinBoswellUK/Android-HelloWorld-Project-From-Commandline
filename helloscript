@@ -1,69 +1,69 @@
-# set up
+#
+#   set up, parameters
+####################################################################
          ProjectName=HelloWorld
         ActivityName=HelloWorldActivity
          PackageName=com.example
 AndroidPluginVersion=1.1.3
 
+echo  ""; echo  "    *** Clean previous versions of project: $ProjectName *** "
 rm -r $ProjectName
 
 
-#Create the project
+echo  ""; echo  "    *** Create the project *** "
+####################################################################
+
 android -v \
-  create project  -n "$ProjectName"  -a "$ActivityName"  -k "$PackageName"  -p "./$ProjectName"  -t 1  -g -v 1.1.3
+  create project  -n "$ProjectName"  -a "$ActivityName"  -k "$PackageName"  -p "./$ProjectName"  -t 1  -g -v "$AndroidPluginVersion"
 #  
-# hash the project, the output of this can be verified against the records.
+echo  ""; echo  "    *** hash the project                         ***"
+          echo  "    *** this can be verified against the records ***"
 find $ProjectName -type f | sort -d | xargs sha1sum | tee fingerprint.log | sha1sum
 
 
-# remove the local.properties file
+echo  ""; echo  "    *** remove the local.properties file ***"
+####################################################################
 rm $ProjectName/local.properties
 rm -r $ProjectName/src/androidTest
 
 
-#updatesome files
+echo  ""
+echo  "    *** Report ANDROID_HOME ***"
+printenv | grep -i android_home
 
+echo  ""; echo  "    *** Update files ***"
+####################################################################
 #change gradle version
 #change gradle-wrapper.properties line 6 
-# --- distributionUrl=http\://services.gradle.org/distributions/gradle-1.12-all.zip
-# +++ distributionUrl=https\://services.gradle.org/distributions/gradle-2.3-bin.zip
+# - distributionUrl=http\://services.gradle.org/distributions/gradle-1.12-all.zip
+# + distributionUrl=https\://services.gradle.org/distributions/gradle-2.3-bin.zip
 #
 cp UpdateFiles/gradle/wrapper/gradle-wrapper.properties $ProjectName/gradle/wrapper/gradle-wrapper.properties
 
 #remove proguard references
 #change gradle.build line 14
-# ---
-# ---    buildTypes {
-# ---        release {
-# ---            runProguard false
-# ---            proguardFile getDefaultProguardFile('proguard-android.txt')
-# ---        }
+# -
+# -    buildTypes {
+# -        release {
+# -            runProguard false
+# -            proguardFile getDefaultProguardFile('proguard-android.txt')
+# -        }
 #
 cp UpdateFiles/build.gradle $ProjectName/build.gradle
 
 #create gradle properties and include deamon
 #gradle.properties line 1
-# +++ org.gradle.daemon=true
+# + org.gradle.daemon=true
 #
 cp UpdateFiles/gradle.properties $ProjectName/gradle.properties
 
 
-#find $ProjectName -type f | sort- d 
-
-#plugin     sdk 
-#           buildtools  sha1
-#1.1.1      22.0.1      
-#1.1.3      22.0.1      5cd337198ead0768975610a135e26257153198c7
-#                       1085fb75d8b9653bf4ac60f345cd01fac89c3c26
-
-
-  exit
-
-####################################################################
-# try gradlew
-#
+echo  ""; echo  "    *** try gradlew ***"
+###################################################################
 cd $ProjectName
 ./gradlew assembleDebug
 cd ..
 
+    exit
 
 
