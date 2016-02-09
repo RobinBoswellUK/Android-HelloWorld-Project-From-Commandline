@@ -5,6 +5,22 @@ Although Android Studio can create projects, the build tools are available in th
 
 The output from the _sdk android tool_ sometimes refuses to build so some changes are made. I have decided to put those changes and the original command in a script.
 
+###Abbreviations
+_[sdk-b-v = sdk build tools version]_
+
+_[gradle-d-v = gradle distribution version]_
+
+_[plugin = Android Plugin Version]_
+
+
+###Files
+    helloscript - a script file for running the create project instructions
+    fingerprint.log - fingerprints of the files in the project edition
+    UpdateFiles - a folder containing the files to be updated after the _create project_
+
+
+
+
 
 ###Build script
 What the script file does.
@@ -41,13 +57,7 @@ To keep things tidy I am using separate branches for various iterations, with a 
 	sdk build version: 22.0.1
 	      branch name: 22_0_1
 
-### Project Versions
-_[sdk-b-v = sdk build tools version]_
-
-_[gradle-d-v = gradle distribution version]_
-
-_[plugin = Android Plugin Version]_
-
+### Create Project Versions
     sdk-b-v     plugin      gradle-d-v  sha1
     22.0.1      1.1.3       1.12-all    1085fb75d8b9653bf4ac60f345cd01fac89c3c26
 
@@ -102,7 +112,7 @@ At this point a hash is generated, which can be checked against the Create Proje
 ## Customisations in this Edition
 
 ### remove the local.properties file
-This file contains information about the local file system, there is a statement within itself regarding security. It is a pointer to the sdk, but this can be achieved using ANDROID\_HOME. If ANDROID\_HOME exists and points to the sdk, then local.properties can be delete, hence this is done in this project. It is also included in the _.gitignore_ file for this project.
+This file contains information about the local file system, there is a statement within itself regarding security. It is a pointer to the sdk, but this can be achieved using ANDROID\_HOME. If ANDROID\_HOME exists and points to the sdk, then _local.properties_ can be delete, hence this is done in this project. It is also included in the _.gitignore_ file for this project.
 
 ###gradle wrapper Version
 This is changed to a more recent version.
@@ -132,6 +142,7 @@ Finally the script runs _assembleDebug_
 ####gradle Output
 After the assemble there are two new folders in the project folder
 _.gradle_ and _build_ . [_.gradle_ is part of the execution of __gradle__ and is not discussed further.] 
+Build contains the files _R.java_ and the _apk_ files.
 
      {HelloWorld}               //Project Name
       > build
@@ -160,6 +171,11 @@ _.gradle_ and _build_ . [_.gradle_ is part of the execution of __gradle__ and is
         > tmp
           > ...
               
+##Appendix create test-project
+The build in this project, originally, contains a _androidTest_ folder, however it does not contain the _test_ folder. The _android create test-project_ command creates the folders for a full test project, from an existing project, if the file _project.properties_ exists, which it doesn't after a _android create project -g ..._ command.
+
+Again its best to use android studio, but if doing this by hand add the _src/test_ folder manually. Instructions about doing this is in the **Boilerplate** project.
+
 
 ##Appendix Gradle Installation and wrappers
 _gradle_ can be installed and/or be used via a wrapper.
@@ -175,7 +191,7 @@ Even if a version is downloaded a different wrapper.jar [gradle version] file ca
 In _.gradle/caches/{version}/plugin-resolution/scripts_
 there is one folder per project named 
 
-_build_\__{hash}/Project_\__Script_ containing files, including _buildscript/cache.properties_ refering to a build/project.
+`build_{hash}/Project_Script` containing files, including _buildscript/cache.properties_ refering to a build/project.
 
 In _.gradle/daemon_ there are log files per session _deamon-####.out.log_ .
 
