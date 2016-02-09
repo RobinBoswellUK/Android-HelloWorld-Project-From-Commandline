@@ -14,9 +14,9 @@ _[plugin = Android Plugin Version]_
 
 
 ###Files
-    helloscript - a script file for running the create project instructions
-    fingerprint.log - fingerprints of the files in the project edition
-    UpdateFiles - a folder containing the files to be updated after the _create project_
+- helloscript - a script file for running the create project instructions
+- fingerprint.log - fingerprints of the files in the -project edition
+- UpdateFiles - a folder containing the files to be updated after the _create project_
 
 
 
