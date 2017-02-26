@@ -1,9 +1,9 @@
-db6884849a482e868cda7420f6c3270622763de4  HelloWorld/build.gradle
+ab694ea8b04a57167d890af18414295c7e2f5ab3  HelloWorld/build.gradle
 446223e9865a320cb76bdf19073a68c3479a4029  HelloWorld/gradlew
 cf68b95a4029e352fe1ee002bb367ac1b686f9ad  HelloWorld/gradlew.bat
 e614e3b2edc63a9cc423437dea087c91962254f5  HelloWorld/gradle/wrapper/gradle-wrapper.jar
 5d0e99f0c1e9a3b7c9538194cf99294164f60bef  HelloWorld/gradle/wrapper/gradle-wrapper.properties
-becd950df1ff21f81317f422fd64f35784b8e301  HelloWorld/local.properties
+837899d1f3c39d585dc67192f9c00e92ec224087  HelloWorld/local.properties
 332125e1ff390ecddb4f74e2ae88a65e5e41f87b  HelloWorld/src/androidTest/java/com/example/HelloWorldActivityTest.java
 dac24c742707083acdb136f22428c225ec3fe7bf  HelloWorld/src/main/AndroidManifest.xml
 4a1ca7c9807fd118b5c5df22846727a546b2c284  HelloWorld/src/main/java/com/example/HelloWorldActivity.java
